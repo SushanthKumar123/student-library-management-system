@@ -1,6 +1,6 @@
 package com.demo.example.student_library_management_system.model;
 
-import com.demo.example.student_library_management_system.TransactionType;
+import com.demo.example.student_library_management_system.Enums.TransactionType;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 

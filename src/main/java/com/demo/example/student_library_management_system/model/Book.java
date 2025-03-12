@@ -1,6 +1,6 @@
 package com.demo.example.student_library_management_system.model;
 
-import com.demo.example.student_library_management_system.Category;
+import com.demo.example.student_library_management_system.Enums.Category;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
