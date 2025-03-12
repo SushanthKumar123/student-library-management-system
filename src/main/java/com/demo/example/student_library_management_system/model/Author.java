@@ -3,6 +3,9 @@ package com.demo.example.student_library_management_system.model;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "author")
 public class Author
@@ -26,6 +29,9 @@ public class Author
 
     @Column(name = "rating",nullable = false)
     private double rating;
+
+    @OneToMany(mappedBy = "author",cascade = CascadeType.ALL)
+    private List<Book> bookByAuthor = new ArrayList<>();
 
     public int getId() {
         return id;

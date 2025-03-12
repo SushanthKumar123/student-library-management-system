@@ -23,11 +23,20 @@ public class Transaction {
     @CreationTimestamp
     private Date transactionDate;
 
+
     @Column(name = "due_date",nullable = false)
     private String dueDate;
 
     @Column(name = "fine",nullable = false)
     private double fine;
+
+    @ManyToOne
+    @JoinColumn
+    private Book book;
+
+    @ManyToOne
+    @JoinColumn
+    private Card card;
 
     public int getId() {
         return id;

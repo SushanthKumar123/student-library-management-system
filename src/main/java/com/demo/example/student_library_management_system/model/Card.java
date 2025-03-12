@@ -5,6 +5,9 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "card")
 public class Card {
@@ -25,6 +28,16 @@ public class Card {
     @Column(name = "updated_date",nullable = false)
     @UpdateTimestamp
     private String updatedDate;
+
+    @OneToOne
+    @JoinColumn
+    private Student student;
+
+    @OneToMany(mappedBy = "card",cascade = CascadeType.ALL)
+    private List<Book> bookByCard = new ArrayList<>();
+
+    @OneToMany(mappedBy = "card",cascade = CascadeType.ALL)
+    private List<Transaction> transactionByCard = new ArrayList<>();
 
     public int getId() {
         return id;
