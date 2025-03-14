@@ -1,6 +1,7 @@
 package com.demo.example.student_library_management_system.model;
 
 import com.demo.example.student_library_management_system.Enums.CardStatus;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -29,6 +30,7 @@ public class Card {
     @UpdateTimestamp
     private String updatedDate;
 
+    @JsonBackReference
     @OneToOne
     @JoinColumn
     private Student student;
