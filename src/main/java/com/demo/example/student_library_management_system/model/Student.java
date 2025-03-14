@@ -98,4 +98,12 @@ public class Student {
     public void setDept(String dept) {
         this.dept = dept;
     }
+
+    public Card getCard() {
+        return card;
+    }
+
+    public void setCard(Card card) {
+        this.card = card;
+    }
 }
